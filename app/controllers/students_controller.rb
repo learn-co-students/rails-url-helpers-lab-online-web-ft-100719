@@ -8,6 +8,17 @@ class StudentsController < ApplicationController
   def show
   end
 
+  def activate
+    set_student 
+    @student.active ? @student.active = false : @student.active = true
+    @student.save 
+    show
+  end 
+
+  def to_s 
+    self.first_name + " " + self.last_name
+  end 
+
   private
 
     def set_student
