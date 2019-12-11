@@ -12,7 +12,6 @@ class StudentsController < ApplicationController
     set_student 
     @student.active ? @student.active = false : @student.active = true
     @student.save 
-    show
   end 
 
   def to_s 
